@@ -1,0 +1,395 @@
+/* Three-dimensional temple edition */
+:root{--ref-bg:#f8edda;--ref-ink:#4b2114;--ref-gold:#a8793d;--ref-panel:#e8cfa0}
+html[data-theme=dark]{--ref-bg:#210609;--ref-ink:#f3d6a5;--ref-gold:#bd8e50;--ref-panel:#76472c}
+.shell{background:var(--ref-bg) url('../img/bg-light.webp') center top/cover fixed}
+html[data-theme=dark] .shell{background:var(--ref-bg) url('../img/bg-dark.webp') center top/cover fixed}
+.ref-home{color:var(--ref-ink);padding-bottom:15px}
+.ref-head{height:86px;padding:8px 15px;display:flex;align-items:center;gap:8px;border-bottom:7px ridge #b88c4d;background:radial-gradient(ellipse at 50% 0,#fff9e8 0%,#ead5ae 70%,#b58c5b 100%);box-shadow:0 5px 8px #52301655}
+html[data-theme=dark] .ref-head{background:radial-gradient(ellipse at 50% 0,#713940,#350c12 65%,#20080a);border-color:#8d5d35}
+.ref-brand{flex:1;min-width:0;text-align:center;font-family:var(--f-dis);font-weight:900;font-size:clamp(19px,5vw,27px);color:#67271e;text-shadow:0 2px #fff4d3}
+html[data-theme=dark] .ref-brand{color:#f5d697;text-shadow:0 2px 3px #140200}
+.ref-emblem{width:57px;height:57px;flex:none;border:5px ridge #c79a60;border-radius:50%;background:radial-gradient(circle,#633029,#250607);box-shadow:0 4px 6px #4b241066,inset 0 0 0 2px #f3d69c;color:#f0d49f;font-size:25px}
+.ref-head .iconbtn{flex:none;width:40px;height:40px;border:3px ridge #c49a5f;border-radius:12px;background:linear-gradient(145deg,#734532,#3c1b15);color:#ffdfa0;box-shadow:0 3px 7px #4e280a66}
+.ref-head .iconbtn .ico{width:20px;height:20px}.ref-head .hsetico-v{width:25px;height:25px}
+.ref-welcome{display:flex;flex-direction:column;gap:3px;padding:16px 22px 15px;font-size:16px;line-height:1.4}.ref-welcome b{font-size:17px}.ref-welcome span{font-size:14px;font-weight:600}
+.ref-scroll{position:relative;border:5px ridge #b58b5c;border-radius:10px;background:linear-gradient(90deg,#b58a56 0%,#f1d9a8 4%,#f8eac8 12%,#efd8af 88%,#bf915c 96%,#8c5c38 100%);box-shadow:0 4px 6px #4e261e77,inset 0 0 22px #a66b3155;color:#4d2818}
+.ref-scroll:before,.ref-scroll:after{content:"";position:absolute;width:11px;top:-8px;bottom:-8px;border-radius:7px;background:linear-gradient(90deg,#7d4c2d,#ddba81,#f2ddb3,#9c663f);box-shadow:1px 2px 3px #40200f77}.ref-scroll:before{left:-7px}.ref-scroll:after{right:-7px}
+html[data-theme=dark] .ref-calendar{background:repeating-linear-gradient(2deg,transparent 0 8px,#4d22101b 9px 10px),linear-gradient(100deg,#b68156,#9e6844,#c69464,#825033);color:#f9e4bd;border-color:#895735}
+.ref-calendar{margin:0 16px;padding:14px 16px;display:flex;min-height:150px}.ref-cal-main{width:62%;padding-right:10px}.ref-date{font-size:14px;font-weight:800;white-space:nowrap}.ref-festival{padding:10px 0 7px;font-size:22px;color:#9d6126}.ref-festival small{display:block;font-size:11px;color:inherit}.ref-festival strong{display:block;font-size:22px;color:var(--ref-ink)}.ref-cal-note{font-size:11px;line-height:1.65}.ref-cal-side{border-left:1px solid #946a46;padding-left:12px;display:flex;flex-direction:column;gap:5px;font-size:12px;flex:1}.ref-cal-side button{background:linear-gradient(#aa7852,#784b34);color:#ffe0a0;border:1px solid #f7dba8;border-radius:20px;padding:5px 10px;font-size:13px;cursor:pointer}.ref-mini-icons{font-size:17px;margin-top:auto}
+.ref-small-cards{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:18px 17px 8px}.ref-small-cards button{min-height:85px;text-align:left;padding:10px 12px;cursor:pointer}.ref-sadhana{display:flex;align-items:center;justify-content:space-between;gap:4px}.ref-sadhana b{font-size:13px}.ref-sadhana small{display:block;font-size:10px;margin-top:5px}.ref-ring{display:grid;place-items:center;flex:none;width:55px;height:55px;border:6px ridge #a97b4f;border-radius:50%;background:#f8eac9;font-size:18px;font-weight:bold;box-shadow:0 2px 4px #633d2577}.ref-reading{font-size:10px;line-height:1.5}.ref-reading b{display:block;margin:3px 0;font-size:12px}.ref-reading em{font-style:normal;background:linear-gradient(#ffe9aa,#c89946);border-radius:15px;padding:2px 9px}
+.ref-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 3px;padding:8px 17px}.ref-grid button{background:none;border:0;color:var(--ref-ink);font-weight:800;font-size:16px;cursor:pointer;padding:0;min-width:0}.ref-grid img{display:block;width:100%;aspect-ratio:137/126;object-fit:cover;mix-blend-mode:multiply}.ref-grid span{display:block;margin-top:-2px}html[data-theme=dark] .ref-grid img{mix-blend-mode:screen}
+.ref-plaque{margin:30px 14% 5px;padding:9px 5px;text-align:center;font-family:var(--f-dis);font-weight:800;font-size:13px;background:linear-gradient(#f7dfaa,#c59c5d);border:5px ridge #c5a06a;color:#592d18;box-shadow:0 5px 8px #4c291a55}
+html[data-theme=dark] .ref-plaque{background:linear-gradient(#764c34,#3c1b16);color:#edc78b;border-color:#8c633f}
+.tabbar{background:linear-gradient(#e1c093,#fff1d1 25%,#f8ebd0);border-top:7px ridge #b99361;box-shadow:0 -4px 10px #4e2c1944;padding:6px 8px calc(8px + env(safe-area-inset-bottom));min-height:67px}
+html[data-theme=dark] .tabbar{background:linear-gradient(#70462e,#32130e 30%,#210b09);border-color:#865a3a}
+.tabbar .tab{color:#744324}.tabbar .tab.on{color:#ad6c21}html[data-theme=dark] .tabbar .tab{color:#e9c7a3}.tabbar .tlabel{font-size:11px;font-weight:700}.tabbar .tabai{width:27px;height:27px;object-fit:contain}
+/* Saraswati puja */
+.reference-puja{padding:0 10px!important}.reference-puja .m-frame{display:none}.ref-puja{color:var(--ref-ink)}
+.ref-shrine{aspect-ratio:664/356;background:url('../icons/reference/shrine-light.jpg') center/100% 100%;border-bottom:4px ridge #a87a49}
+html[data-theme=dark] .ref-shrine{background-image:url('../icons/reference/shrine-dark.jpg')}
+.ref-puja-info{text-align:center;padding:10px 4px 12px;font-size:15px;line-height:1.5}.ref-puja-info span,.ref-puja-info small{display:block}.ref-puja-info small{margin:6px auto 0;width:max-content;padding:3px 15px;border:1px solid #b6925d;border-radius:20px;background:#f5dfb4;color:#5c351d;font-weight:bold}
+.ref-materials{display:grid;grid-template-columns:repeat(5,1fr);gap:5px 3px;padding:12px 10px;margin:0 7px}.ref-material{position:relative;background:none;border:0;padding:2px 0;color:#442719;cursor:pointer;min-width:0}.ref-material img{display:block;width:100%;height:46px;object-fit:contain;filter:drop-shadow(0 3px 2px #52311177)}.ref-material i{position:absolute;left:0;top:0;font-size:10px;font-style:normal;background:linear-gradient(#ffefa9,#b68842);border:1px solid #a87537;border-radius:50%;width:19px;height:19px;display:grid;place-items:center}.ref-material span{display:block;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:linear-gradient(#fff0ce,#c5a174);border:2px ridge #b48a5c;border-radius:4px;box-shadow:0 2px 3px #60381777}.ref-material.current{filter:drop-shadow(0 0 5px #ffcc54)}
+.ref-nads{display:flex;justify-content:space-around;margin:15px 0}.ref-nads .nad-chip{width:19%;height:auto;background:none;border:0;box-shadow:none;display:flex;flex-direction:column;gap:4px}.ref-nads .nad-ic,.ref-nads .nad-ic img{width:50px;height:50px;object-fit:contain}.ref-nads .nad-chip b{font-size:12px;color:var(--ref-ink)}
+.cmdbar{background:linear-gradient(100deg,#d2a36a,#f8e8c1 10%,#f8e8c1 90%,#c89963)!important;border:5px ridge #b48a60!important;border-radius:12px!important;box-shadow:0 -3px 12px #2f110c66!important}.cmdbar .cmd-m,.cmdbar .cmd-h{color:#4c261a}.cmdbar .cmd-go{background:linear-gradient(#ffecae,#d5a23f)!important;color:#482310!important;border:2px ridge #e6c37c!important}.cmdbar .cbtn{background:linear-gradient(#ffe5a8,#c4954d);color:#4c2413;border:2px ridge #c99f67;border-radius:12px}
+@media(max-width:380px){.ref-head{height:75px;padding:6px 10px}.ref-emblem{width:45px;height:45px}.ref-head .iconbtn{width:34px;height:34px}.ref-brand{font-size:18px}.ref-welcome{padding:12px 17px;font-size:14px}.ref-calendar{margin:0 11px;padding:10px}.ref-date{font-size:11px}.ref-festival strong{font-size:18px}.ref-cal-side{font-size:10px}.ref-grid button{font-size:14px}}
+/* Shared carved details for the remaining functional app screens */
+.card{border:2px ridge #c4a16b;background:linear-gradient(145deg,#fff9e9,#f2dfbd);box-shadow:0 5px 10px #70462435,inset 0 1px #fff8e5}
+html[data-theme=dark] .card{border-color:#8f633e;background:linear-gradient(145deg,#59301e,#32130e);box-shadow:0 5px 10px #0f0205aa,inset 0 1px #a47852}
+.appbar{border-bottom:5px ridge #b38b58;background:linear-gradient(120deg,#f8e6c0,#fff6df,#dfc094);box-shadow:0 4px 8px #542a1644}
+html[data-theme=dark] .appbar{background:linear-gradient(120deg,#3d1114,#69343a,#2d0c0e);border-color:#a47546}
+.cmdbar{bottom:calc(70px + env(safe-area-inset-bottom))}
+/* Calendar scroll: artwork from the reference, with live HTML information */
+.ref-calendar{container-type:inline-size;position:relative;display:grid;grid-template-columns:62% 38%;align-items:stretch;width:calc(100% - 20px);aspect-ratio:953 / 431;min-height:0;margin:0 10px;padding:7.7% 7% 7% 7.2%;border:0;border-radius:0;box-shadow:none;background:url('../icons/reference/calendar-scroll.png?v=transparent1') center / 100% 100% no-repeat;color:#552918}
+.ref-calendar::before,.ref-calendar::after{display:none}
+html[data-theme=dark] .ref-calendar{background:url('../icons/reference/calendar-scroll-dark.png?v=transparent1') center / 100% 100% no-repeat;color:#502316}
+.ref-cal-main{width:auto;min-width:0;padding:0 5% 0 0;display:flex;flex-direction:column}
+.ref-date{display:flex;align-items:center;gap:1.4%;font-size:3.15cqw;line-height:1.25;font-weight:800;white-space:nowrap;color:#74451f}
+.ref-date .ico,.ref-time .ico{flex:none;width:3.2cqw;height:3.2cqw;stroke:#83582a}
+.ref-event{display:flex;align-items:center;gap:2.2%;min-height:0;flex:1;margin:2.5% 0 1%}
+.ref-event-art{display:block;object-fit:cover;width:24%;height:100%;max-height:16cqw;aspect-ratio:126/145;border:1px solid #b48b4e;box-shadow:0 1px 3px #70421d55}
+.ref-event-copy{min-width:0;flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.8cqw}
+.ref-event-tags{display:flex;align-items:center;gap:1cqw;white-space:nowrap;overflow:hidden}
+.ref-event-tags span{background:linear-gradient(#aa8367,#79563e);border:1px solid #e0c296;box-shadow:inset 0 0 0 1px #66442a,0 1px 2px #623d2266;color:#fff3dc;border-radius:2.5cqw;padding:.7cqw 1.3cqw;font-size:2.6cqw;font-weight:600;line-height:1.1}
+.ref-event-copy strong{font-size:4.1cqw;line-height:1.15;font-family:var(--f-dis);color:#4c1b13;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ref-cal-note{font-size:2.7cqw;line-height:1.4;overflow:hidden}.ref-time{display:flex;align-items:center;gap:1%;white-space:nowrap;color:#774d26;font-size:2.7cqw}.ref-event-note{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1.3cqw;font-weight:600}
+.ref-cal-side{width:auto;min-width:0;padding:0 0 0 8%;border-left:1px solid #9e784f;display:flex;align-items:flex-end;gap:0}.ref-cal-side button{display:flex;align-items:center;justify-content:space-between;gap:1cqw;padding:1.1cqw 2.2cqw;width:80%;border:2px solid #e2c190;border-radius:4cqw;background:linear-gradient(#ad8a6c,#79543b);box-shadow:inset 0 0 0 1px #73503c,0 1px 2px #71503266;color:#ffe19b;font-size:3cqw;line-height:1.15;font-weight:700}.ref-cal-side button span{font-size:3.5cqw}
+.ref-calendar-facts{align-self:stretch;display:flex;flex-direction:column;align-items:flex-end;gap:1.4cqw;margin-top:2.2cqw;white-space:nowrap;font-size:2.8cqw;font-weight:700;line-height:1.1}.ref-calendar-facts b{font-size:2.8cqw}.ref-calendar-icons{display:block;width:100%;height:auto;max-height:6.5cqw;object-fit:contain;mix-blend-mode:multiply;margin-top:auto}
+html[data-theme=dark] .ref-date,html[data-theme=dark] .ref-time{color:#56301a}html[data-theme=dark] .ref-calendar-icons{mix-blend-mode:multiply}
+/* Two transparent illustrated scroll cards: the information remains live */
+.ref-small-cards{container-type:inline-size;display:grid;grid-template-columns:1fr 1fr;gap:2.5%;padding:14px 10px 6px}
+.ref-small-cards button{position:relative;display:block;min-width:0;min-height:0;aspect-ratio:1.88;padding:0;border:0;border-radius:0;box-shadow:none;text-align:left;color:#4d2118;cursor:pointer;background-color:transparent;background-repeat:no-repeat;background-position:center;background-size:100% 100%}
+.ref-small-cards button:before,.ref-small-cards button:after{display:none}
+.ref-small-cards .ref-sadhana{background-image:url('../icons/reference/sadhana-card.png?v=2')}
+.ref-small-cards .ref-reading{background-image:url('../icons/reference/reading-card.png?v=2')}
+.ref-sadhana-title{position:absolute;left:14%;top:12%;font-size:3.1cqw;font-weight:800;line-height:1.15;white-space:nowrap}
+.ref-sadhana .ref-ring{position:absolute;left:71.2%;top:52%;transform:translate(-50%,-50%);width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;color:#4d2118;font-size:4.1cqw;font-weight:800;line-height:1}
+.ref-reading-line{position:absolute;top:22%;left:11%;right:9%;font-size:2.45cqw;line-height:1.15;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ref-reading-bottom{position:absolute;top:43%;left:11%;right:9%;display:flex;align-items:center;justify-content:space-between;gap:2%;white-space:nowrap}
+.ref-reading-bottom b{font-size:2.55cqw;line-height:1.1;overflow:hidden;text-overflow:ellipsis}
+.ref-reading-bottom em{flex:none;font-style:normal;font-size:2.45cqw;font-weight:700;line-height:1;padding:1.1cqw 1.7cqw;border-radius:4cqw;color:#532b14;background:linear-gradient(#ffefbd,#d3a048);box-shadow:0 2px 3px #70431c66}
+/* Reference menu: each original object and its wooden platform are separate PNG layers */
+.ref-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 3px;padding:8px 13px}
+.ref-grid button{min-width:0;padding:0;border:0;background:transparent;cursor:pointer;color:var(--ref-ink)}
+.ref-grid .ref-menu-art{position:relative;display:block;width:100%;aspect-ratio:1.02;overflow:visible}
+.ref-grid .ref-menu-art img{position:absolute;display:block;mix-blend-mode:normal;aspect-ratio:auto;object-fit:contain}
+.ref-grid .ref-menu-pedestal{width:100%;height:33%;left:0;bottom:0;filter:drop-shadow(0 4px 3px #4a28115c)}
+.ref-grid .ref-menu-object{width:72%;height:67%;left:14%;bottom:22%;filter:drop-shadow(0 3px 2px #542f2070)}
+.ref-grid .ref-menu-label{display:block;margin:1px 0 0;font-size:16px;font-weight:800;line-height:1.25}
+.ref-grid button:focus-visible{outline:3px solid #bd852c;outline-offset:2px;border-radius:8px}
+.ref-grid button:active .ref-menu-art{transform:translateY(2px)}
+@media(max-width:380px){.ref-grid .ref-menu-label{font-size:14px}}
+/* Keep the icon above its pedestal in both themes. Dark-mode screen blending
+   washed out transparent art and made it appear to disappear behind the base. */
+.ref-grid .ref-menu-art{isolation:isolate}
+.ref-grid .ref-menu-art .ref-menu-pedestal{z-index:1}
+.ref-grid .ref-menu-art .ref-menu-object{z-index:2}
+html[data-theme=dark] .ref-grid .ref-menu-art img{mix-blend-mode:normal}
+/* Carved reference header: artwork stays decorative, all controls are real buttons */
+.ref-head{container-type:inline-size;position:relative;display:block;width:100%;height:auto!important;aspect-ratio:4.15/1;padding:0!important;border:0;gap:0;background:url('../icons/reference/header-light.jpg?v=1') center/100% 100% no-repeat;box-shadow:0 4px 7px #3e1b1238}
+html[data-theme=dark] .ref-head{background:url('../icons/reference/header-dark.jpg?v=1') center/100% 100% no-repeat}
+.ref-head .ref-brand{position:absolute;left:21%;top:56%;transform:translateY(-50%);width:53%;text-align:center;white-space:nowrap;font-family:var(--f-dis);font-size:5.1cqw!important;font-weight:900;line-height:1.1;color:#6e291f;text-shadow:0 1px 0 #ffecd2,0 2px 1px #a86b4c;pointer-events:none}
+html[data-theme=dark] .ref-head .ref-brand{color:#f4d596;text-shadow:0 2px 1px #502415,0 3px 4px #180100}
+.ref-head .ref-emblem,.ref-head .iconbtn{position:absolute;top:34%;height:54%!important;width:13%!important;padding:0;border:0;border-radius:14%;background:transparent!important;box-shadow:none;cursor:pointer;color:transparent}
+.ref-head .ref-emblem{left:6.5%;font-size:0}
+.ref-head .iconbtn.hbtn-search{left:73.5%}
+.ref-head .iconbtn.hbtn-set{left:86.5%}
+html[data-theme=dark] .ref-head .iconbtn.hbtn-search{left:69.5%}
+html[data-theme=dark] .ref-head .iconbtn.hbtn-set{left:84%}
+.ref-head .iconbtn img,.ref-head .iconbtn svg{opacity:0}
+.ref-head button:focus-visible{outline:3px solid #e2b057;outline-offset:2px}
+/* Independent header layers: side controls never cover the central temple arch. */
+@font-face{font-family:HeaderBengali;src:url('../fonts/noto-serif-bengali-bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+.ref-head{background-image:url('../icons/reference/head-bg-light.jpg?v=2');isolation:isolate}
+html[data-theme=dark] .ref-head{background-image:url('../icons/reference/head-bg-dark.jpg?v=2')}
+.ref-head .ref-brand{left:25%;width:50%;top:62%;font-family:HeaderBengali,'Noto Serif Bengali',serif;font-size:4.15cqw!important;font-weight:700;letter-spacing:-.02em;z-index:1;color:#702b20;text-shadow:0 1px 0 #fff4da,0 2px 2px #976443}
+html[data-theme=dark] .ref-head .ref-brand{color:#f1d29a;text-shadow:0 1px 0 #fff0c4,0 2px 2px #3f1207,0 3px 4px #200909}
+.ref-head .ref-emblem,.ref-head .iconbtn{top:27%;height:56%!important;padding:0;z-index:2;background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important;filter:drop-shadow(0 3px 3px #29150980)}
+.ref-head .ref-emblem{left:5%;width:13%!important;background-image:url('../icons/reference/head-emblem.png')!important}
+.ref-head .iconbtn.hbtn-search,html[data-theme=dark] .ref-head .iconbtn.hbtn-search{left:76.5%;width:10.5%!important;background-image:url('../icons/reference/head-search.png')!important}
+.ref-head .iconbtn.hbtn-set,html[data-theme=dark] .ref-head .iconbtn.hbtn-set{left:88%;width:10.5%!important;background-image:url('../icons/reference/head-settings.png')!important}
+/* Reference-only header stage: remove buttons and preserve one matching motif in both themes. */
+.ref-head{background-image:url('../icons/reference/header-original-blank-light-matching.png?v=1')}
+html[data-theme=dark] .ref-head{background-image:url('../icons/reference/header-original-blank-dark.png?v=1')}
+.ref-head .ref-emblem,.ref-head .iconbtn{display:none!important}
+/* Same artwork in both modes: only the colour treatment changes. */
+.ref-head{aspect-ratio:6.15/1}
+.ref-head .ref-brand{top:56%;font-size:4cqw!important}
+.ref-head .ref-emblem,.ref-head .iconbtn.hbtn-set{display:block!important;top:13%;height:70%!important}
+.ref-head .ref-emblem{left:4.5%;width:10.5%!important}
+.ref-head .iconbtn.hbtn-set,html[data-theme=dark] .ref-head .iconbtn.hbtn-set{left:86%;width:10.5%!important}
+.ref-head .iconbtn.hbtn-search{display:none!important}
+/* Same uploaded relief for both themes; dark image is a colour remap of light. */
+.ref-head{aspect-ratio:6.8/1;background-image:url('../icons/reference/header-exact-light.png?v=1')}
+html[data-theme=dark] .ref-head{background-image:url('../icons/reference/header-exact-dark.png?v=1')}
+/* Enlarge and center the app name inside the carved arch. */
+.ref-head .ref-brand{left:20%;width:60%;top:52%;font-size:5.8cqw!important;line-height:1.15;text-align:center}
+/* The source arch is slightly left of center; shift its visual centre to 50%. */
+.ref-head,html[data-theme=dark] .ref-head{background-size:107% 100%;background-position:left center;background-repeat:no-repeat}
+.ref-head .ref-brand{left:28%;width:44%;top:58%;font-size:5cqw!important;line-height:1.08;text-align:center;white-space:nowrap}
+/* Marble navigation dock from the reference, with five real navigation tabs. */
+.tabbar,html[data-theme=dark] .tabbar{position:relative;display:flex;align-items:stretch;gap:0;min-height:0;height:auto;aspect-ratio:5.3/1;border:0;padding:2.5% 4% max(1%,env(safe-area-inset-bottom));background:url('../icons/reference/nav-light.png?v=1') center/100% 100% no-repeat;box-shadow:0 -3px 8px #40200c55;backdrop-filter:none}
+html[data-theme=dark] .tabbar{background-image:url('../icons/reference/nav-dark.png?v=1')}
+html[data-theme=light] .tabbar::before,.tabbar::before{display:none!important}
+.tabbar .tab,.tabbar .tab.on{flex:1;min-width:0;opacity:1;transform:none;padding:0;display:flex;justify-content:center;align-items:center;background:none}
+.tabbar .tab .tbox,.tabbar .tab.on .tbox{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;width:100%;min-height:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;transform:none;animation:none;overflow:visible}
+.tabbar .tab.on .tbox::before,.tabbar .tab.on .tbox::after{display:none;animation:none}
+.tabbar .tab .tabai,.tabbar .tab.on .tabai,.tabbar .tab:not(.on) .tabai{display:block;width:clamp(25px,7.4vw,36px);height:clamp(25px,7.4vw,36px);object-fit:contain;opacity:1;filter:drop-shadow(0 1px 1px #6e3d252d);animation:none;transform:none}
+.tabbar .tab .tlabel,.tabbar .tab.on .tlabel,.tabbar .tab:not(.on) .tlabel{display:block;color:#663d25;font-size:clamp(10px,2.8vw,14px);font-weight:700;line-height:1.1;text-shadow:none;white-space:nowrap}
+html[data-theme=dark] .tabbar .tab .tabai{filter:brightness(0) saturate(100%) invert(87%) sepia(23%) saturate(563%) hue-rotate(339deg) brightness(103%) drop-shadow(0 1px 2px #1b0906)}
+html[data-theme=dark] .tabbar .tab .tlabel,html[data-theme=dark] .tabbar .tab.on .tlabel{color:#f6d7ad}
+.tabbar .tab.on .tabai{filter:drop-shadow(0 0 4px #d39b4f99)}
+.tabbar .tab:focus-visible{outline:2px solid #b87832;outline-offset:-2px}
+/* Keep the puja action bar above the taller reference navigation dock. */
+.cmdbar{bottom:calc(min(100vw, var(--shell-w)) / 5.3)}
+@media(min-width:700px){.cmdbar{bottom:calc((100dvh - min(920px, 100dvh - 24px))/2 + min(100vw, var(--shell-w))/5.3)}}
+/* The older light-theme dock rule has higher specificity: override it explicitly. */
+html[data-theme="light"] .tabbar{background-image:url('../icons/reference/nav-light.png?v=2');background-size:100% 100%;background-position:center;background-repeat:no-repeat;border:0;box-shadow:0 -3px 8px #40200c55}
+/* Plain navigation icons only: no glow, sheen, floating or drop shadows. */
+html[data-theme] .tabbar .tab .tabai,
+html[data-theme] .tabbar .tab.on .tabai,
+html[data-theme] .tabbar .tab:not(.on) .tabai{filter:none!important;animation:none!important;transform:none!important;box-shadow:none!important;opacity:1}
+.tabbar .tab .tbox::before,.tabbar .tab .tbox::after,.tabbar .tab::before,.tabbar .tab::after{content:none!important;display:none!important;animation:none!important}
+/* Legible calendar card: high contrast, no fixed aspect ratio or clipped text. */
+.ref-calendar{aspect-ratio:auto;min-height:220px;padding:26px 7.1% 24px 7.2%;grid-template-columns:minmax(0,61%) minmax(0,39%);color:#3d1b12}
+.ref-cal-main{padding-right:10px;gap:7px}
+.ref-date{align-items:flex-start;gap:5px;color:#533014;font-size:clamp(12px,3.25vw,15px);line-height:1.3;white-space:normal;overflow-wrap:anywhere}
+.ref-date .ico,.ref-time .ico{width:14px;height:14px;margin-top:1px;flex:none;stroke:currentColor}
+.ref-event{flex:0 0 auto;align-items:center;gap:8px;margin:0;min-height:65px}
+.ref-event-art{flex:none;width:52px;height:62px;max-height:none;aspect-ratio:auto;object-fit:cover;border:2px ridge #b78f53;border-radius:2px}
+.ref-event-copy{gap:5px}
+.ref-event-tags{gap:4px;white-space:normal;flex-wrap:wrap;overflow:visible}
+.ref-event-tags span{font-size:10px;line-height:1.25;padding:3px 6px;border-radius:10px;color:#fff9ec;background:linear-gradient(#8a624c,#613a28)}
+.ref-event-copy strong{font-family:HeaderBengali,var(--f-ui);font-size:clamp(14px,3.7vw,18px);font-weight:700;line-height:1.3;color:#42180e;overflow-wrap:anywhere;display:block;overflow:visible}
+.ref-cal-note{overflow:visible;line-height:1.4;font-size:clamp(11px,2.9vw,13px)}
+.ref-time{align-items:flex-start;gap:4px;white-space:normal;color:#543016;font-size:inherit;line-height:1.35}
+.ref-time span{overflow-wrap:anywhere}.ref-event-note{margin-top:5px;white-space:normal;overflow:visible;text-overflow:clip;line-height:1.4}
+.ref-cal-side{padding-left:10px;align-items:stretch;gap:8px;border-left:1px solid #9b734e}
+.ref-cal-side button{align-self:flex-end;width:auto;min-width:85px;min-height:33px;justify-content:center;gap:8px;padding:5px 10px;font-size:13px;line-height:1.2;border-radius:18px;color:#fff3ce;background:linear-gradient(#8b6248,#5e392a)}
+.ref-cal-side button span{font-size:15px}
+.ref-calendar-facts{align-items:flex-start;gap:5px;margin-top:0;white-space:normal;font-size:clamp(11px,3vw,13px);line-height:1.35;color:#3d1b12;overflow-wrap:anywhere}
+.ref-calendar-facts b{font-size:inherit}.ref-calendar-icons{display:flex;align-items:flex-end;justify-content:space-between;gap:2px;width:100%;max-height:none;height:30px;object-fit:initial;mix-blend-mode:normal;margin-top:auto}
+.ref-calendar-icons img{display:block;min-width:0;width:24%;height:30px;object-fit:contain;filter:drop-shadow(0 1px 1px #4a251f66)}
+html[data-theme=dark] .ref-calendar{color:#31150d}
+html[data-theme=dark] .ref-calendar .ref-date,html[data-theme=dark] .ref-calendar .ref-time,html[data-theme=dark] .ref-calendar .ref-calendar-facts,html[data-theme=dark] .ref-calendar .ref-event-copy strong{color:#2f130c;text-shadow:0 1px 0 #e7b77c90}
+html[data-theme=dark] .ref-calendar .ref-cal-side{border-color:#643d22}
+@media(max-width:340px){.ref-calendar{grid-template-columns:minmax(0,59%) minmax(0,41%);padding-left:7.5%;padding-right:7.5%}.ref-event-art{width:42px;height:55px}.ref-cal-main{padding-right:6px}.ref-cal-side{padding-left:6px}.ref-cal-side button{min-width:72px}.ref-event-copy strong{font-size:14px}}
+/* Bundle the Bengali fonts so text stays readable even on devices without them. */
+@font-face{font-family:AppBangla;src:url('../fonts/noto-sans-bengali-regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:AppBangla;src:url('../fonts/noto-sans-bengali-bold.ttf') format('truetype');font-style:normal;font-weight:700;font-display:swap}
+:root{--f-ui:AppBangla,'Noto Sans Bengali',sans-serif;--f-dis:HeaderBengali,AppBangla,serif}
+/* Contrast surface for the dark wood: keep all text readable without hiding its grain. */
+html[data-theme=dark] .ref-calendar::before{content:"";display:block!important;position:absolute;z-index:0;inset:9% 6.5% 9% 6.5%;width:auto;top:9%;bottom:9%;left:6.5%;right:6.5%;border-radius:7px;background:rgba(255,231,181,.38);box-shadow:none;pointer-events:none}
+.ref-calendar .ref-cal-main,.ref-calendar .ref-cal-side{position:relative;z-index:1}
+.ref-calendar .ref-date{font-size:clamp(13px,3.4vw,15px)}
+.ref-calendar .ref-cal-note,.ref-calendar .ref-calendar-facts{font-size:clamp(12px,3.15vw,14px)}
+.ref-calendar .ref-hours{display:inline-block;white-space:nowrap;font-weight:700}
+/* Rotating seven-day events: preserve the existing scroll artwork and make the dates explicit. */
+.ref-calendar .ref-rot{min-width:0}
+.ref-calendar .hx-item{display:none}
+.ref-calendar .hx-item.on{display:block}
+.ref-calendar .ref-event-note b,.ref-calendar .ref-event-note span{display:block;line-height:1.35}
+.ref-calendar .ref-event-note span{margin-top:2px}
+.ref-calendar .ref-calendar-facts small{font-size:11px;color:#704723;font-weight:700}
+html[data-theme=dark] .ref-calendar .ref-calendar-facts small{color:#442011}
+.ref-rot-controls{display:flex;align-items:center;gap:5px;margin-top:2px;font-size:11px;font-weight:700;color:#512e19}
+.ref-rot-controls .ref-rot-label{flex:1;white-space:nowrap}
+.ref-rot-controls button{display:grid;place-items:center;width:27px;height:27px;padding:0;background:#7b5337;color:#fff8e8;border:1px solid #bd9a6d;border-radius:50%;font-size:20px;line-height:1;cursor:pointer}
+.ref-rot-controls button:focus-visible{outline:2px solid #7d3d1b;outline-offset:2px}
+.ref-rot-count{white-space:nowrap;font-variant-numeric:tabular-nums}
+/* Single-line calendar date with a separate, aligned panjika button. */
+.ref-calendar{grid-template-rows:auto 1fr;row-gap:8px;align-content:start}
+.ref-calendar .ref-date{grid-area:1 / 1 / 2 / 3;position:relative;z-index:1;align-items:center;padding-right:clamp(72px,23%,94px);font-size:clamp(11.5px,3.4vw,15px);line-height:1.3;white-space:nowrap;overflow-wrap:normal}
+.ref-calendar .ref-date span{white-space:nowrap}
+.ref-calendar-go{grid-area:1 / 2 / 2 / 3;position:relative;z-index:1;justify-self:end;align-self:center;display:flex;align-items:center;justify-content:center;gap:7px;min-width:72px;min-height:32px;padding:4px 10px;border:2px solid #e2c190;border-radius:18px;background:linear-gradient(#8b6248,#5e392a);box-shadow:inset 0 0 0 1px #73503c,0 1px 2px #71503266;color:#fff3ce;font-size:13px;font-weight:700;line-height:1.2;cursor:pointer}
+.ref-calendar-go span{font-size:15px}
+.ref-calendar .ref-cal-main{grid-area:2 / 1;gap:0}
+.ref-calendar .ref-cal-side{grid-area:2 / 2;padding-top:0}
+.ref-calendar .ref-event{margin-bottom:7px}
+.ref-calendar .ref-calendar-facts{gap:5px}
+.ref-calendar-go:focus-visible{outline:2px solid #7d3d1b;outline-offset:2px}
+@media(max-width:340px){.ref-calendar .ref-date{font-size:11px}.ref-calendar-go{min-width:68px;padding-left:7px;padding-right:7px}}
+/* Subject-specific transparent 3D calendar icons, aligned to their labels. */
+.ref-calendar .ref-inline-icon{display:block;flex:none;object-fit:contain;filter:drop-shadow(0 1px 1px #58341355)}
+.ref-calendar .ref-date-icon{width:16px;height:18px}
+.ref-calendar .ref-time-icon{width:19px;height:22px;margin-top:0}
+.ref-calendar .ref-event-art{width:61px;height:62px;border:0;border-radius:0;object-fit:contain;box-shadow:none;filter:drop-shadow(0 2px 2px #5b361b66)}
+.ref-calendar .ref-calendar-facts{gap:7px}
+.ref-calendar .ref-fact{display:flex;align-items:flex-start;gap:5px;min-width:0;line-height:1.35}
+.ref-calendar .ref-fact img{flex:none;display:block;width:20px;height:22px;object-fit:contain;filter:drop-shadow(0 1px 1px #5b361b55)}
+.ref-calendar .ref-fact b,.ref-calendar .ref-fact span{min-width:0;overflow-wrap:anywhere}
+@media(max-width:340px){.ref-calendar .ref-event-art{width:46px;height:55px}.ref-calendar .ref-fact{gap:3px}.ref-calendar .ref-fact img{width:17px;height:20px}}
+/* Previously used art is retained in the subjects it depicts. */
+.reuse-gita-head{display:flex;align-items:center;gap:12px;min-width:0}
+.reuse-scripture{display:block;flex:none;width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 2px 2px #49241260)}
+.reuse-gita-copy{flex:1;min-width:0}
+.reuse-balance{display:block;flex:none;width:48px;height:52px;object-fit:contain;filter:drop-shadow(0 2px 2px #49241260)}
+.reuse-meditation{display:flex;align-items:center;gap:11px;min-width:0;margin-top:12px;padding:9px;border:2px ridge #b98b56;border-radius:14px;background:linear-gradient(105deg,#f4dfb7,#fff2d4);box-shadow:0 3px 7px #4f2c1e33;color:#512519}
+html[data-theme=dark] .reuse-meditation{background:linear-gradient(105deg,#674129,#422117);border-color:#9a6b3e;color:#f7dfb5}
+.reuse-scene{display:block;flex:none;width:64px;height:64px;object-fit:cover;border:2px solid #cfab6e;border-radius:8px}
+.reuse-meditation-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px;line-height:1.35}
+.reuse-meditation-copy b{font-size:14px}.reuse-meditation-copy span{font-size:11px}
+.reuse-sage{display:block;flex:none;width:48px;height:58px;object-fit:contain;filter:drop-shadow(0 2px 2px #49241255)}
+@media(max-width:340px){.reuse-scripture{width:46px;height:48px}.reuse-balance{width:38px;height:42px}.reuse-scene{width:50px;height:50px}.reuse-sage{width:40px;height:48px}}
+/* Daily practice and reading cards: all illustrations are independent layers. */
+.ref-small-cards{gap:2%;padding:16px 9px 8px}
+.ref-small-cards .ref-sadhana,.ref-small-cards .ref-reading{container-type:inline-size;aspect-ratio:1.48;min-height:0;background-image:url('../icons/reference/card-scroll-layer.png?v=1');background-size:100% 100%;background-position:center;background-repeat:no-repeat;color:#472016;overflow:visible}
+.ref-sadhana-title,.ref-reading-title{position:absolute;left:14%;right:11%;top:13%;display:block;text-align:left;white-space:nowrap;line-height:1.2;font-family:AppBangla,sans-serif;font-size:clamp(11px,6.5cqw,15px);font-weight:700;color:#502318}
+.ref-sadhana-summary{position:absolute;left:15%;top:30%;font-size:clamp(9px,5cqw,11px);font-weight:600;line-height:1.15;color:#775135;white-space:nowrap}
+.ref-sadhana-sage{position:absolute;left:14%;bottom:13%;width:33%;height:47%;object-fit:contain;filter:drop-shadow(0 2px 2px #6c412b50)}
+.ref-progress-medallion{position:absolute;right:11%;top:35%;width:39%;aspect-ratio:1;display:grid;place-items:center}
+.ref-progress-medallion img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 2px #5e352751)}
+.ref-progress-medallion b{position:relative;z-index:1;font-family:HeaderBengali,serif;font-size:clamp(14px,9cqw,21px);color:#4c2119;line-height:1}
+.ref-reading-title{right:10%}
+.ref-reading-book{position:absolute;top:31%;left:14%;right:13%;display:block;font-size:clamp(9px,5.1cqw,11.5px);font-weight:700;line-height:1.2;text-align:left;color:#51281a;white-space:normal;overflow-wrap:normal}
+.ref-reading-book b{white-space:nowrap}
+.ref-reading-chapter{position:absolute;top:49%;left:14%;right:12%;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:clamp(9px,4.8cqw,11px);line-height:1.22;font-weight:600;text-align:left;color:#62402c}
+.ref-reading-feather{position:absolute;left:13%;bottom:12%;width:47%;height:19%;object-fit:contain;filter:drop-shadow(0 1px 1px #58391c55)}
+.ref-reading-go{position:absolute;right:12%;bottom:14%;padding:3px 8px;border:1px solid #d9b575;border-radius:12px;background:linear-gradient(#fff0bd,#d2a354);box-shadow:0 2px 3px #76482455;color:#542d18;font-size:clamp(9px,5cqw,11px);font-weight:700;line-height:1.15}
+.ref-small-cards button:focus-visible{outline:3px solid #a66924;outline-offset:2px;border-radius:8px}
+.ref-small-cards button:active{transform:translateY(1px)}
+.daily-task-card{max-width:380px}
+.daily-task-kicker{font-size:11px;letter-spacing:.04em;color:var(--ink-3);font-weight:700}
+.daily-task-card h2{margin:3px 0 0;font-size:20px;font-family:HeaderBengali,serif;color:var(--ink)}
+.daily-task-progress{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:18px;font-size:13px;color:var(--ink)}
+.daily-task-progress span{font-size:12px;color:var(--ink-3)}
+.daily-task-bar{height:8px;border-radius:20px;background:var(--track);overflow:hidden;margin:8px 0 12px}
+.daily-task-bar i{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#b66e2c,#e5b856);transition:width .25s}
+.daily-task-hint{margin:0 0 10px;font-size:12px;line-height:1.5;color:var(--ink-2)}
+.daily-task-list{display:grid;gap:8px}
+.daily-task-row{display:flex;align-items:center;gap:10px;min-height:48px;width:100%;padding:10px;border:1px solid var(--card-border);border-radius:12px;background:var(--glass);color:var(--ink);text-align:left;font-size:13px;font-weight:600;line-height:1.35;cursor:pointer}
+.daily-task-check{display:grid;place-items:center;flex:none;width:22px;height:22px;border:2px solid #ae7d46;border-radius:7px;color:#fff8e8;background:transparent;font-size:15px;font-weight:900}
+.daily-task-row.is-done .daily-task-check{background:#9c652f;border-color:#9c652f}
+.daily-task-row:focus-visible{outline:2px solid #d49947;outline-offset:2px}
+.daily-task-go{margin-top:16px}
+.daily-task-foot{margin-top:10px;text-align:center;color:var(--ink-3);font-size:10px;line-height:1.4}
+.ref-small-cards .ref-reading-book b{display:inline;margin:0;font-size:inherit;line-height:inherit}
+.daily-task-pop .daily-task-card{top:50%;left:50%;right:auto;transform:translate(-50%,-50%);animation:none;max-height:calc(100dvh - 32px)}
+.daily-task-pop .daily-task-card::before{display:none}
+/* Home search: standalone gilded icon and live results. */
+.ref-home-search{position:relative;z-index:12;margin:10px 18px 8px}
+.ref-home-search-field{display:flex;align-items:center;gap:10px;height:45px;padding:0 11px;border:1px solid #c59a63;border-radius:15px;background:linear-gradient(180deg,#fffaf0,#f2dfbf);box-shadow:inset 0 1px 2px #fff9e8,0 3px 6px #65391c27}
+.ref-home-search-field:focus-within{outline:2px solid #b88036;outline-offset:2px}
+.ref-home-search-field img{width:27px;height:27px;flex:none;filter:drop-shadow(0 1px 1px #50311666)}
+.ref-home-search-field input{flex:1;min-width:0;width:100%;padding:0;border:0;outline:0;background:transparent;color:#4c241b;font:600 13px/1.4 AppBangla,sans-serif}
+.ref-home-search-field input::placeholder{color:#8a6751;opacity:1}
+.ref-home-search-field input::-webkit-search-cancel-button{-webkit-appearance:none}
+.ref-search-clear{flex:none;width:28px;height:28px;border:0;border-radius:50%;background:#dfc395;color:#643422;font-size:20px;line-height:1;cursor:pointer}
+.ref-search-clear[hidden],.ref-home-search-results[hidden]{display:none}
+.ref-home-search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;max-height:min(52vh,360px);padding:8px;border:1px solid #c59a63;border-radius:15px;background:#fff8ea;box-shadow:0 8px 24px #35180d66;color:#4c241b}
+html[data-theme=dark] .ref-home-search-field{background:linear-gradient(180deg,#5c2722,#36140f);border-color:#a27642;box-shadow:inset 0 1px 2px #a1664077,0 3px 7px #10040088}
+html[data-theme=dark] .ref-home-search-field input{color:#fff2da}
+html[data-theme=dark] .ref-home-search-field input::placeholder{color:#e0c6a3}
+html[data-theme=dark] .ref-search-clear{background:#76502f;color:#fff0d0}
+html[data-theme=dark] .ref-home-search-results{background:#35100e;border-color:#a27642;color:#fff3dd}
+@media(max-width:350px){.ref-home-search{margin-left:13px;margin-right:13px}.ref-home-search-field input{font-size:12px}}
+/* A separate microphone layer for optional browser voice search. */
+.ref-search-voice{display:grid;place-items:center;flex:none;width:36px;height:36px;padding:5px;border:0;border-left:1px solid #c59a6380;border-radius:0;background:transparent;cursor:pointer}
+.ref-home-search-field .ref-search-voice img{width:25px;height:25px;object-fit:contain}
+.ref-search-voice:focus-visible{outline:2px solid #b88036;outline-offset:0;border-radius:7px}
+.ref-search-voice.is-listening{border-radius:50%;background:#bc774026;box-shadow:0 0 0 2px #b76e2d77}
+.ref-search-voice-status{margin:5px 5px 0;padding:6px 9px;border-radius:9px;background:#fff6e4;color:#62381f;font-size:11px;line-height:1.4;box-shadow:0 2px 5px #48251230}
+.ref-search-voice-status[hidden]{display:none}
+html[data-theme=dark] .ref-search-voice-status{background:#4a2019;color:#ffe8c9}
+/* Date results: readable summary plus every matching bundled observance. */
+.ref-date-result{padding:10px;border:1px solid var(--card-border-strong);border-radius:12px;background:var(--glass);color:var(--ink);font-size:12px;line-height:1.55}
+.ref-date-result-head{display:flex;flex-direction:column;gap:3px}
+.ref-date-result-head>span{font-size:10px;font-weight:700;color:var(--ink-3)}
+.ref-date-result-head strong{font-size:14px;color:var(--ink)}
+.ref-date-result-head small{font-size:11px;color:var(--ink-2)}
+.ref-date-facts{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
+.ref-date-facts span{display:flex;flex-direction:column;padding:6px 8px;border-radius:8px;background:var(--chip-bg);color:var(--ink-3);font-size:10px;line-height:1.4}
+.ref-date-facts b{color:var(--ink);font-size:11px}
+.ref-date-events{display:grid;gap:5px;padding-top:5px;border-top:1px solid var(--card-border)}
+.ref-date-events>div{display:flex;flex-direction:column;gap:1px;padding:6px 8px;background:var(--chip-bg);border-radius:8px}
+.ref-date-events small{color:var(--ink-3);font-size:10px}
+.ref-date-events p,.ref-date-result p{margin:3px 0}
+.ref-date-caution{font-size:10px!important;line-height:1.55;color:var(--ink-3);padding:7px 0}
+.ref-date-open{display:block;width:100%;padding:9px;border:1px solid #a87437;border-radius:9px;background:linear-gradient(#eed298,#c8944d);color:#4a2413;font-weight:700;font-size:12px;cursor:pointer}
+.ref-date-open:focus-visible{outline:2px solid #b88036;outline-offset:2px}
+/* Semantic colours and generous, consistent safe areas inside the scrolls. */
+.ref-calendar{padding:30px 8.5% 36px;grid-template-columns:minmax(0,60%) minmax(0,40%)}
+.ref-calendar .ref-date,html[data-theme=dark] .ref-calendar .ref-date{color:#6e271b;text-shadow:none}
+.ref-calendar .ref-event-copy strong,html[data-theme=dark] .ref-calendar .ref-event-copy strong{color:#752b1e;text-shadow:none}
+.ref-calendar .ref-event-tags span:first-child{background:linear-gradient(#9b4a34,#722e20);border-color:#dcae7c;color:#fff9ee}
+.ref-calendar .ref-event-tags span:last-child{background:linear-gradient(#6e7e54,#435b38);border-color:#b8b98b;color:#fffbee}
+.ref-calendar .ref-time,html[data-theme=dark] .ref-calendar .ref-time{color:#31553d;text-shadow:none}
+.ref-calendar .ref-hours{color:#234d38}
+.ref-calendar .ref-event-note b{color:#344e70}
+.ref-calendar .ref-event-note span{color:#594775}
+.ref-calendar .ref-calendar-facts,html[data-theme=dark] .ref-calendar .ref-calendar-facts{color:#53331f;text-shadow:none}
+.ref-calendar .ref-calendar-facts small,html[data-theme=dark] .ref-calendar .ref-calendar-facts small{color:#7b3625}
+.ref-calendar .ref-fact em{font-style:normal;font-weight:600;color:#715039}
+.ref-calendar .ref-fact b{color:#3f4166}
+.ref-calendar .ref-fact:first-of-type b{color:#355441}
+.ref-calendar .ref-cal-side{padding-left:9px}
+.ref-calendar .ref-cal-main{padding-right:9px}
+.ref-calendar .ref-date{font-size:clamp(10px,3.05vw,14px);padding-right:75px}
+.ref-calendar-go{min-width:68px;padding:4px 8px}
+.ref-calendar .ref-event-note,.ref-calendar .ref-event-copy strong,.ref-calendar .ref-fact span{overflow-wrap:anywhere}
+@media(max-width:340px){.ref-calendar{padding:26px 8.5% 34px;grid-template-columns:minmax(0,59%) minmax(0,41%)}.ref-calendar .ref-date{font-size:10px;padding-right:68px}.ref-calendar .ref-cal-side{padding-left:6px}.ref-calendar .ref-cal-main{padding-right:6px}}
+/* Small cards grow with their content rather than letting text escape fixed coordinates. */
+.ref-small-cards{align-items:stretch;gap:2%;padding:14px 10px 8px}
+.ref-small-cards .ref-sadhana,.ref-small-cards .ref-reading{aspect-ratio:auto;min-height:clamp(155px,44vw,194px);height:100%;overflow:hidden}
+.ref-card-inner{position:relative;display:flex;flex-direction:column;align-items:stretch;min-width:0;height:100%;padding:13% 15% 16%;text-align:left}
+.ref-sadhana-title,.ref-reading-title{position:static;left:auto;right:auto;top:auto;white-space:normal;overflow-wrap:anywhere;line-height:1.28;font-size:clamp(10.5px,6.5cqw,15px);color:#792e21}
+.ref-sadhana-summary{position:static;margin-top:4px;white-space:normal;font-size:clamp(9px,5.1cqw,11px);line-height:1.3;color:#386044}
+.ref-reading-book{position:static;margin-top:5px;line-height:1.32;font-size:clamp(9px,5.25cqw,12px);color:#51351e;overflow-wrap:anywhere}
+.ref-small-cards .ref-reading-book b{color:#315879}
+.ref-reading-chapter{position:static;display:block;overflow:visible;margin-top:4px;line-height:1.35;font-size:clamp(9px,4.9cqw,11px);color:#59476e;overflow-wrap:anywhere}
+.ref-card-art-row{display:flex;align-items:center;justify-content:space-between;gap:5%;min-width:0;margin-top:auto;padding-top:5px}
+.ref-sadhana-sage{position:static;display:block;width:39%;height:auto;max-height:65px;object-fit:contain;align-self:flex-end}
+.ref-progress-medallion{position:relative;top:auto;right:auto;width:48%;max-width:75px;flex:none}
+.ref-progress-medallion b{color:#6f2d20}
+.ref-reading-feather{position:static;display:block;width:48%;height:auto;max-height:27px;object-fit:contain}
+.ref-reading-go{position:static;display:inline-block;flex:none;padding:3px 7px;font-size:clamp(9px,5cqw,11px);color:#65351d}
+.ref-calendar{padding-bottom:44px}
+@media(max-width:340px){.ref-calendar{padding-bottom:42px}}
+/* Both live dates sit centred beneath search, outside the parchment. */
+.ref-today-dates{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;margin:9px 16px 5px;text-align:center;line-height:1.35}
+.ref-today-gregorian{display:block;font-size:clamp(12px,3.5vw,15px);font-weight:700;color:#6e271b;white-space:nowrap}
+.ref-today-bangla{display:block;font-size:clamp(11px,3.1vw,13px);font-weight:700;color:#315b42;white-space:nowrap}
+html[data-theme=dark] .ref-today-gregorian{color:#f8dbac}
+html[data-theme=dark] .ref-today-bangla{color:#bcdab5}
+/* A two-column calendar stays intact after moving its dates out. */
+.ref-calendar{grid-template-rows:auto;row-gap:0;align-content:start}
+.ref-calendar .ref-cal-main{grid-area:1 / 1}
+.ref-calendar .ref-cal-side{grid-area:1 / 2;align-items:stretch;gap:10px}
+.ref-calendar .ref-calendar-go{grid-area:auto;align-self:flex-end;flex:none;position:relative;min-height:30px;min-width:68px;width:auto}
+/* The feather tracks each Bengali grapheme while the event title is written. */
+.ref-calendar .ref-writing-title{position:relative;display:block;overflow:visible}
+.ref-writing-ink{display:inline}
+.ref-writing-letter{visibility:hidden}
+.ref-writing-letter.written{visibility:visible}
+.ref-writing-feather{position:absolute;width:34px;height:34px;object-fit:contain;pointer-events:none;opacity:0;z-index:3;transition:left .12s linear,top .12s linear,opacity .2s;filter:drop-shadow(0 1px 1px #54391f77)}
+.ref-writing-feather.is-writing{opacity:1}
+@media(prefers-reduced-motion:reduce){.ref-writing-feather{display:none!important}.ref-writing-letter{visibility:visible!important}}
+html.no-motion .ref-writing-feather{display:none!important}
+html.no-motion .ref-writing-letter{visibility:visible!important}
+.ref-writing-feather{width:30px;height:30px;transform:scaleX(-1)}
+/* Each live observance has its own full-width, prominent title above the details. */
+.ref-calendar{display:block}
+.ref-calendar .ref-rot{position:relative;z-index:1;width:100%}
+.ref-calendar .hx-item.on{display:grid;grid-template-columns:minmax(0,60%) minmax(0,40%);grid-template-areas:'headline headline' 'main side';align-items:start;row-gap:11px}
+.ref-calendar .ref-event-head{grid-area:headline;display:block;min-width:0;text-align:center;padding:0 6px}
+.ref-calendar .ref-event-head strong,html[data-theme=dark] .ref-calendar .ref-event-head strong{display:block;min-width:0;font-family:HeaderBengali,AppBangla,serif;font-size:clamp(20px,5.4cqw,27px);font-weight:700;line-height:1.4;overflow-wrap:anywhere;color:#812d1e;text-shadow:0 1px #fff0cd}
+.ref-calendar .ref-cal-main{grid-area:main;min-width:0}
+.ref-calendar .ref-cal-side{grid-area:side;min-width:0;align-self:stretch}
+.ref-calendar .ref-event{min-height:0;align-items:center;gap:6px}
+.ref-calendar .ref-event-tags{min-width:0}
+.ref-calendar .ref-writing-feather{z-index:4}
+@media(max-width:340px){.ref-calendar .hx-item.on{grid-template-columns:minmax(0,59%) minmax(0,41%)}.ref-calendar .ref-event-head strong{font-size:20px}}
+/* All slides share a grid cell, so the tallest slide determines a steady height. */
+.ref-calendar .ref-rot{display:grid;grid-template-columns:minmax(0,1fr)}
+.ref-calendar .hx-item,.ref-calendar .hx-item.on{grid-area:1 / 1;display:grid;grid-template-columns:minmax(0,60%) minmax(0,40%);grid-template-areas:'headline headline' 'main side';align-items:start;align-content:start;row-gap:11px;min-width:0}
+.ref-calendar .hx-item{visibility:hidden;pointer-events:none}
+.ref-calendar .hx-item.on{visibility:visible;pointer-events:auto}
+@media(max-width:340px){.ref-calendar .hx-item,.ref-calendar .hx-item.on{grid-template-columns:minmax(0,59%) minmax(0,41%)}}
+.ref-calendar .ref-sun-times{display:grid;gap:5px;width:100%;margin-top:2px;padding-top:7px;border-top:1px solid #a7784f80}
+.ref-calendar .ref-sun-fact img{width:20px;height:20px}
+.ref-calendar .ref-sun-fact span{display:flex;flex-wrap:wrap;gap:0 4px;align-items:baseline;line-height:1.3}
+.ref-calendar .ref-sun-fact em{font-size:clamp(10px,2.9vw,12px);color:#754528}
+.ref-calendar .ref-sun-fact b{font-variant-numeric:tabular-nums;color:#9a4c20}
+.ref-calendar .ref-sun-times small{font-size:9px;line-height:1.3;color:#765238}
+html[data-theme=dark] .ref-calendar .ref-sun-times small{color:#5b341f}
+@media(max-width:340px){.ref-calendar .ref-sun-fact img{width:17px;height:18px}.ref-calendar .ref-sun-fact em{font-size:10px}}
+.ref-calendar .hx-item:not(.on) .ref-writing-letter{visibility:hidden!important}

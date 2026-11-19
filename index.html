@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="theme-color" content="#fdf7e4"/>
+<title>সনাতন বিদ্যাপীঠ — শাস্ত্রের আলোয়, সেবার পথে</title>
+<meta name="description" content="সনাতন ধর্মের অনলাইন বিদ্যাপীঠ — শাস্ত্র গ্রন্থাগার, কোর্স, পরীক্ষা ও কুইজ, পূজা পদ্ধতি, পঞ্জিকা, সেবা ও দক্ষতাভিত্তিক আয়।"/>
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-light-192.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-dark-192.png" media="(prefers-color-scheme: dark)"/>
+<link rel="apple-touch-icon" href="icons/icon-light-512.png"/>
+<link rel="manifest" href="manifest.webmanifest"/>
+<link rel="stylesheet" href="css/app.css?v=87"/>
+<link rel="stylesheet" href="css/reference.css?v=sunfixed1"/>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<div class="shell">
+  <div id="view" class="view" role="main"></div>
+  <nav id="tabbar" class="tabbar" aria-label="প্রধান নেভিগেশন"></nav>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="fx" class="fx" aria-hidden="true"></div>
+
+<script src="js/gita.js?v=3"></script>
+<script src="js/gita-bn.js?v=4"></script>
+<script src="js/gita-katha.js?v=29"></script>
+<script src="js/gita-speaker.js?v=1"></script>
+<script>
+  /* অফলাইন: service worker — নতুন সংস্করণ এলে নিজে থেকেই রিফ্রেশ */
+  if ('serviceWorker' in navigator && /^https?:/.test(location.protocol)) {
+    addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').then(reg => {
+        reg.update().catch(() => {});
+        setInterval(() => reg.update().catch(() => {}), 60 * 1000);
+      }).catch(() => {});
+    });
+    let _swReload = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (_swReload) return;
+      _swReload = true;
+      if (document.visibilityState === 'visible') location.reload();
+    });
+  }
+</script>
+<script src="js/data.js?v=24"></script>
+<script src="js/jyotish.js?v=2"></script>
+<script src="js/puja-darpana.js?v=75"></script>
+<script src="js/aarti.js?v=87"></script>
+<script src="js/nad.js?v=87"></script>
+<script src="js/app.js?v=sunfixed1"></script>
+</body>
+</html>
